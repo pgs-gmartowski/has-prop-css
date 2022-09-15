@@ -1,0 +1,119 @@
+.main {
+  &__parents-counting-children {
+    --color: black; /* CSS variables */
+    color: var(--color);
+    position: relative;
+    width: 530px;
+  }
+
+  &__parents-counting-children {
+    ul {
+      border: 2px solid var(--color);
+      padding: 0;
+      color: var(--color);
+      list-style: none;
+      counter-reset: count;
+    }
+
+    li {
+      counter-increment: count;
+      margin: 0;
+      padding: 0.5rem 0.5rem 0.2rem 4.5ch;
+      height: 1.8rem;
+      position: relative;
+
+      &::before {
+        content: counter(count); /* a number which appears before input*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--color);
+        color: #fff;
+        margin-right: 1rem;
+        width: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        box-sizing: border-box;
+      }
+    }
+
+    &:focus-within { /* focus an element and it's descendants */
+      --color: rgb(11, 103, 162);
+    }
+
+    &::before {
+      content: attr(data-default); /* insert a content which is based on elements attribute called data-default*/
+    }
+
+    &:focus-within::before {
+      content: attr(data-empty-focus);
+    }
+
+    &:has(li:nth-child(2)) {
+      --color: rebeccapurple;
+    }
+
+    &:has(li:nth-child(3)) {
+      --color: rgb(255, 111, 0);
+    }
+
+    &:has(li:nth-child(4) > :first-child) {
+      --color: rgb(203, 157, 0);
+    }
+
+    &:has(li:nth-child(4)) {
+      --color: rgb(76, 113, 32);
+    }
+
+    &:has(li:nth-child(5)) {
+      --color: red;
+    }
+
+    &:has(li:nth-child(2))::before {
+      content: attr(data-great-choice)
+    }
+
+    &:has(li:nth-child(3) > :first-child)::before,
+    &:has(li:nth-child(3))::before {
+      content: attr(data-half);
+    }
+
+    &:has(li:nth-child(4):last-child)::before {
+      content: attr(data-done);
+    }
+
+    &:has(li:nth-child(4) > :first-child)::before {
+      content: attr(data-one-more);
+    }
+
+    &:has(li:nth-child(5))::before {
+      content: attr(data-too-much);
+    }
+
+    &:has(li:nth-child(5))::before {
+      content: attr(data-too-much);
+    }
+
+    &:has(li:nth-child(5) > :first-child)::before {
+      content: attr(data-almost-too-much);
+    }
+
+    &:has(li:nth-child(4)) button {
+      opacity: 1;
+    }
+
+    &:has(li:nth-child(4) > :first-child) button {
+      opacity: 0;
+    }
+
+    &:has(li:nth-child(5)) button {
+      opacity: 0;
+    }
+
+    &:has(li:nth-child(5) > :first-child) button {
+      opacity: 1;
+    }
+  }
+}

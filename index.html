@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap"
+          rel="stylesheet">
+    <link type="text/css" href="style.scss" rel="stylesheet">
+    <title>:has() prop CSS feature</title>
+</head>
+<body>
+<header>
+    <h1>:has() prop CSS feature</h1>
+    <blockquote>
+        <p>Here is a brand new feature from cascading style sheets, it's only experimental so far, but looks like it
+            might be a well supported stuff soon
+        </p>
+    </blockquote>
+    <div class="instructions">
+        <p>
+            How to run a :has() effect:
+        <ol>
+            <li>focus on input</li>
+            <li>type something</li>
+            <li>press enter</li>
+            <li>repeat</li>
+            <li>enjoy 😃</li>
+        </ol>
+        </p>
+    </div>
+</header>
+<div class="main">
+    <div class="main__parents-counting-children"
+         data-default="Indicate tasks for today. But no more than 4 :trollface:"
+         data-great-choice="Cool 😎, now the second one ! 👍"
+         data-empty-focus="Add a second task"
+         data-half="We're halfway through, what's next ?"
+         data-one-more="Once more  ...."
+         data-done="Cool ! 👍 Now push Submit"
+         data-almost-too-much="Hey 😱! Enough !"
+         data-too-much="I said enough !🤬"
+    >
+
+        <ul contenteditable>
+            <li></li>
+        </ul>
+
+        <button type="button">
+            Submit
+        </button>
+    </div>
+</body>
+</html>
